@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import ImageThumb from '../components/Image';
 
 class Gallery extends React.Component {
