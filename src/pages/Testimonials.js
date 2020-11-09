@@ -5,7 +5,8 @@ class Testimonials extends React.Component {
  render() {
  	return (
        <div>
-  hi
+ 		<p>"Jobs a goodun"</p>
+ 		<p>"Quality Merch"</p>
        </div>   
     );
  } 

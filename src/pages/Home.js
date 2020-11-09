@@ -33,7 +33,7 @@ return (
 		Furniture assembly and removal
 		Garden maintenance
 		General repairs
-	If you let your property in Brighton and Hove and would like quick, professional help, please email thepeoplesgeneralwoodhouse@gmail.com</p>
+	If you let your property in Brighton and Hove and would like quick, professional help, please email <a href="mailto:thepeoplesgeneralwoodhouse@gmail.com">thepeoplesgeneralwoodhouse@gmail.com</a></p>
 </div>
 );
 }

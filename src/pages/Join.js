@@ -38,7 +38,7 @@ return (
         <li className="pv1">Barnaby Ash</li>
     </ul>
     <h2>How to apply</h2>
-    <p>What to be involved? Send us an email at thepeoplesgeneralwoodhouse@gmail.com</p>
+    <p>What to be involved? Send us an email at <a href="mailto:thepeoplesgeneralwoodhouse@gmail.com">thepeoplesgeneralwoodhouse@gmail.com</a></p>
 </div>
 );
 }

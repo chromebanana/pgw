@@ -9,7 +9,7 @@ class App extends Component {
   render() {
  // TODO: https://en.wikipedia.org/wiki/Centrifugal_governor
   return (
-    <div className="App mw7 w-90 ph3 pv4-l pv4-m center">
+    <div className="App mw7 w-90 ph3 pv4-l pv4-m center ">
         <Router> 
           <Navigation />
           <BaseRouter/>
