@@ -1,11 +1,14 @@
 import React from 'react';
+import pgw from '../images/pgw.png';
+
 class Home extends React.Component {
 render() {
 return (
 	<div>
-	<div class="vh-100 dt w-100 tc cover" style={{'backgroundImage':'url(http://mrmrs.github.io/photos/u/009.jpg))'}}>
+	<div class="vh-50 cover " style={{'backgroundImage':'url('+pgw+')'}}>
 		
 	</div>	
+	<div>
 	<h1 className="mt1 mt3-l mt3-m">Peoples General Woodhouse</h1>
 	<p>The People’s General Woodhouse is a collective of woodworkers and other traders working in Sussex. We believe in:
 		<ul className="pl0 ml0" style={{'list-style-type':'none'}}>
@@ -38,6 +41,7 @@ return (
 		General repairs
 	If you let your property in Brighton and Hove and would like quick, professional help, please email <a href="mailto:thepeoplesgeneralwoodhouse@gmail.com">thepeoplesgeneralwoodhouse@gmail.com</a></p>
 </div>
+	</div>	
 );
 }
 }
