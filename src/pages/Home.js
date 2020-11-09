@@ -2,7 +2,10 @@ import React from 'react';
 class Home extends React.Component {
 render() {
 return (
-<div>
+	<div>
+	<div class="vh-100 dt w-100 tc cover" style={{'backgroundImage':'url(http://mrmrs.github.io/photos/u/009.jpg))'}}>
+		
+	</div>	
 	<h1 className="mt1 mt3-l mt3-m">Peoples General Woodhouse</h1>
 	<p>The People’s General Woodhouse is a collective of woodworkers and other traders working in Sussex. We believe in:
 		<ul className="pl0 ml0" style={{'list-style-type':'none'}}>
