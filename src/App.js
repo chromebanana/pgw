@@ -7,9 +7,8 @@ import './App.css';
 
 class App extends Component {
   render() {
- // TODO: https://en.wikipedia.org/wiki/Centrifugal_governor
   return (
-    <div className="App center ">
+    <div className="App">
         <Router> 
           <Navigation />
           <BaseRouter/>

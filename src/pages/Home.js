@@ -5,10 +5,9 @@ class Home extends React.Component {
 render() {
 return (
 	<div>
-	<div class="vh-50 cover " style={{'backgroundImage':'url('+pgw+')'}}>
-		
-	</div>	
-	<div>
+	<img class="w-100" alt="pgw"src={pgw}/>
+
+	<div className="mw7 w-90 center">
 	<h1 className="mt1 mt3-l mt3-m">Peoples General Woodhouse</h1>
 	<p>The People’s General Woodhouse is a collective of woodworkers and other traders working in Sussex. We believe in:
 		<ul className="pl0 ml0" style={{'list-style-type':'none'}}>
