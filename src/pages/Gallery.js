@@ -15,7 +15,7 @@ class Gallery extends React.Component {
         var category = this.state.category
 
         return (
-            <div className="ph2">
+            <div>
 
   <h1>Gallery</h1>
   {
