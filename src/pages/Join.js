@@ -13,22 +13,22 @@ return (
         Members contribute things like skills, work, space and tools and benefit from things others contribute.
         Membership costs nothing.
     </p>
-    <h2>What you could contribute:</h2>
-    <p>        Skills and experience that others would like to gain
-        Tools that others may not have
-        Work opportunities, when you need help on a job
-        A big vehicle
-        Work space
-    Time, when someone else has run out</p>
-    <h2>What you could receive:</h2>
+    <h2>What you could contribute</h2>
+    <p>        Skills and experience that others would like to gain.
+        Tools that others may not have.
+        Work opportunities, when you need help on a job.
+        A big vehicle.
+        Work space.
+    Time, when someone else has run out.</p>
+    <h2>What you could receive</h2>
     <p>
-        Learn new skills to expand your range of work
-        Borrow tools and machinery instead of buying new
-        Work on other people’s projects
-        Get introduced to new clients
-        Get help moving bulky stuff around
-        Rent cheap workshop space
-    Be part of a community of traders</p>
+        Learn new skills to expand your range of work.
+        Borrow tools and machinery instead of buying new.
+        Work on other people’s projects.
+        Get introduced to new clients.
+        Get help moving bulky stuff around.
+        Rent cheap workshop space.
+    Be part of a community of traders.</p>
     <h2>Current members and trades(?)</h2>
     <ul className="pl0 ml0"style={{'list-style-type':'none'}}>
         <li className="pv1">Alex Casey</li>

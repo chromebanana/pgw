@@ -14,7 +14,12 @@ class App extends Component {
         <Router> 
           <Navigation />
           <BaseRouter/>
-	<footer className="tc mv3"><img class="w-20" alt="pgw"src={pgwinit}/></footer>
+	<footer className="tc mt3 pv4 mt4 bt b--black-20">
+
+	<img class="w-20" alt="pgw"src={pgwinit}/>
+
+	</footer>
+
         </Router>
     
   </div>
