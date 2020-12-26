@@ -31,7 +31,7 @@ class Gallery extends React.Component {
 
 
         return (
-            <div>
+            <div className="tc">
 
   <h1>Gallery</h1>
   {

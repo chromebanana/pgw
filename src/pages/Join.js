@@ -7,7 +7,7 @@ this.state = {
 }
 render() {
 return (
-<div>
+<div className="tc">
     <h1>How we work</h1>
     <p>The People’s General Woodhouse is a collective, made up of independent traders who are interested in supporting each other and increasing the range of their work.
         Members contribute things like skills, work, space and tools and benefit from things others contribute.

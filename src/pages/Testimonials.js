@@ -4,7 +4,7 @@ class Testimonials extends React.Component {
 
  render() {
  	return (
-       <div >
+       <div className="tc">
  		<p>"Jobs a goodun"</p>
  		<p>"Quality Merch"</p>
        </div>   
