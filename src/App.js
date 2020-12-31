@@ -9,7 +9,7 @@ import './App.css';
 class App extends Component {
   render() {
   return (
-    <div className="App mw7 w-90 center">
+    <div className="App mw7 w-90 mb5 center">
         <Router> 
           <Navigation />
           <BaseRouter/>
