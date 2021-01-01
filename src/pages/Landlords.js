@@ -1,5 +1,5 @@
 import React from 'react';
-import {InfoSection} from '../components/ContentSection';
+import List from '../components/List';
 
 class Landlords extends React.Component {
 
@@ -7,7 +7,7 @@ class Landlords extends React.Component {
  	return (
        <div className="tc">
        <h1>Landlords</h1>
-<InfoSection  
+<List  
 	intro="We provide fast turn-around work for rented accommodation, covering the following areas:	" 
 	list={['Painting and Decorating', 'Furniture Assembly and Removal', 'Garden Maintenance', 'General Repairs']} 
 	outro={[" If you let your property in Brighton and Hove and would like quick, professional help ", <a href="mailto:thepeoplesgeneralwoodhouse@gmail.com">please email us.</a>]}/>
