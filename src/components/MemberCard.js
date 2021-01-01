@@ -6,7 +6,7 @@ const MemberCard = ({ name, trades, tool, img }) => {
   return(
  <article className="mw5 center bg-white br3 pa3 pa4-ns mv2 ba b--black-10">
  	<div className="tc">
- 	<img src={img} className="br-100 h3 w3 dib" title="Photo of a kitty staring at you" alt={"picture of"+name}/>
+ 	<img src={img} className="br-100 h4 w4 dib" title={"Photo of "+name} alt={"photo of "+name}/>
 	<h1 className="f4">{name}</h1>
 	<hr className="mw3 bb bw1 b--black-10"/>
  	</div>
