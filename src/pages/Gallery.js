@@ -37,7 +37,7 @@ class Gallery extends React.Component {
   {
   category.map((category, i) => {
     return (
-      <div>
+      <div className="Fill">
       <h2 key={i}>{category}</h2>
       <main className="cf w-100">
       {       
