@@ -27,7 +27,7 @@ return (
     <h1>Current Members</h1>
     <div className="flex flex-wrap">
 
-    <MemberCard name="Alex Casey" trades="Carpentry, Joinery, Wood-turning" tool="egg whisk" img={alex}/>
+    <MemberCard name="Alex Casey" trades="Carpentry, Joinery, Wood-turning" tool="Egg Whisk" img={alex}/>
 </div>
 </div>
 );

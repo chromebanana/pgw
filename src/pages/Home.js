@@ -32,7 +32,7 @@ class Home extends React.Component {
         return (
             <div className="tc">
 
-	<p className="ph2 pb2 f4-ns f4"><span className="b">The People’s General Woodhouse</span> is a collective of woodworkers and other traders working in Sussex. We believe in:</p>
+	<p className="ph2-ns ph2 pb3-ns f4-ns f4"><span className="b">The People’s General Woodhouse</span> is a collective of woodworkers and other traders working in Sussex. We believe in:</p>
     <RevealContainer emoji="🌱" 
     emojidesc="seedling" 
     title="Eco-friendly building options" 

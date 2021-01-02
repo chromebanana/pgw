@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
+
 body {
   margin: 0;
   padding: 0;
@@ -13,7 +14,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Courier New", Courier, monospace;
-    background: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,3 +24,24 @@ body {
    background-color:#ff0;
 }
 
+#background { 
+  background: url('./images/wood-texture.jpg');
+  position: relative; 
+
+  display: flex;
+
+}
+
+
+/*.ColourFilter {
+  background-color:rgba(255, 255, 235, 0.9);
+}*/
+
+.WhiteFilter {
+  background-color:rgba(255, 255, 255, 0.8);
+}
+
+.App {
+
+  min-height: 100%;
+}

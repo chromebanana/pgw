@@ -1,5 +1,5 @@
 import React from 'react';
-import wood from '../images/wood-texture2.jpg';
+import wood from '../images/wood-texture-zoom.jpg';
 
 
 
@@ -11,7 +11,7 @@ const MemberCard = ({ name, trades, tool, img }) => {
 	<div className=" bg-white-70 br3 ">
 	<h1 className="f4 pt2 mb2">{name}</h1>
 	<hr className="mw4 bb bw1 b--black-30 mv0"/>
- 	<div className="lh-copy ma0 pa2 center f5 black-7">
+ 	<div className="lh-copy ma0 pa2 center f5">
    <p className="ma0 pv1"><span className="b">Trades:</span> {trades}</p>
    <p className="ma0 pv1"><span className="b">Favourite Tool:</span> {tool}</p>
  	</div>
