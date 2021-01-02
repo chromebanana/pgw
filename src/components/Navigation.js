@@ -11,11 +11,11 @@ export const Navigation = () => {
   	<div className="pl4-ns pl3 pb2">
 	<div>
 		<nav  className="mh0 mv2 pb1 db f3 b underline">
-		<Link className='dim black dib mr3 pointer mv2' to="/">Home</Link>
-		<Link className='dim black dib mr3 pointer mv2' to="/gallery">Gallery</Link>
-		<Link className='dim black dib mr3 pointer mv2' to="/join">Join Us</Link>
-		<Link className='dim black dib mr3 pointer mv2' to="/testimonials">Testimonials</Link>
-		<Link className='dim black dib mr3 pointer mv2' to="/landlords">Landladys/lords</Link>
+		<Link className='dim black dib mr3 pointer mv2 link' to="/">Home</Link>
+		<Link className='dim black dib mr3 pointer mv2 link' to="/gallery">Gallery</Link>
+		<Link className='dim black dib mr3 pointer mv2 link' to="/join">Join Us</Link>
+		<Link className='dim black dib mr3 pointer mv2 link' to="/testimonials">Testimonials</Link>
+		<Link className='dim black dib mr3 pointer mv2 link' to="/landlords">Landladys/lords</Link>
 
 		</nav>
 	<div className="mt1 db ">

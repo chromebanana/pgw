@@ -4,7 +4,7 @@ const List = ({ title, intro, list, outro }) => {
 
   return(
  <div className="w-100 pt1">
- <h2 className="mb2 mt0 f4 f4-ns center">{title}</h2>
+ <h2 className="mb2 mt0 f4 center">{title}</h2>
     <div className="">
     <div className= { intro ? "lh-copy":""}>
     <p>{intro}</p></div>
