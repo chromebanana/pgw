@@ -23,9 +23,11 @@ const categories = [
             ]
 
 var images = []
+// eslint-disable-next-line
  categories.forEach((category) => {
     category.images.map((image) => {
-      images.push(image.default)
+// eslint-disable-next-line
+      return images.push(image.default)
     })
   })
 
