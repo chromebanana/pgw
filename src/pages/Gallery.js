@@ -2,59 +2,76 @@ import React from 'react';
 import ImageThumb from '../components/Image';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css'
-import kitchen1 from '../images/kitchen-photo-1.jpg';
-import kitchen2 from '../images/kitchen-photo-2.jpg';
-import kitchen3 from '../images/kitchen-photo-3.jpg';
-import kitchen4 from '../images/kitchen-photo-4.jpg';
+
+function importAll(r) {
+  return r.keys().map(r);
+}
+
+const Bespoke = { images: importAll(require.context('../images/Gallery/Bespoke', false, /\.(png|jpe?g|svg)$/)), category: 'Bespoke' };
+const Cabinetry = { images: importAll(require.context('../images/Gallery/Cabinetry', false, /\.(png|jpe?g|svg)$/)), category: 'Cabinetry' };
+const Carving = { images: importAll(require.context('../images/Gallery/Carving', false, /\.(png|jpe?g|svg)$/)), category: 'Carving' };
+const Framing = { images: importAll(require.context('../images/Gallery/Framing', false, /\.(png|jpe?g|svg)$/)), category: 'Framing' };
+const Kitchens = { images: importAll(require.context('../images/Gallery/Kitchens', false, /\.(png|jpe?g|svg)$/)), category: 'Kitchens' };
+const Lamps = { images: importAll(require.context('../images/Gallery/Lamps', false, /\.(png|jpe?g|svg)$/)), category: 'Lamps' };
+const Outdoor = { images: importAll(require.context('../images/Gallery/OutdoorBuilds', false, /\.(png|jpe?g|svg)$/)), category: 'Outdoor Builds' };
+const Shelving = { images: importAll(require.context('../images/Gallery/Shelving', false, /\.(png|jpe?g|svg)$/)), category: 'Shelving' };
+const Woodturning = { images: importAll(require.context('../images/Gallery/Woodturning', false, /\.(png|jpe?g|svg)$/)), category: 'Woodturning' };
+const Workshop = { images: importAll(require.context('../images/Gallery/Workshop', false, /\.(png|jpe?g|svg)$/)), category: 'Workshop' };
+
+const categories = [
+            Bespoke, Cabinetry, Carving, Framing, Kitchens, Lamps, Outdoor, Shelving, Woodturning, Workshop
+            ]
+
+var images = []
+ categories.forEach((category) => {
+    category.images.map((image) => {
+      images.push(image.default)
+    })
+  })
 
 
 class Gallery extends React.Component {
     constructor() {
         super();
         this.state = {
-            photosData: [kitchen1, kitchen2, kitchen3, kitchen4],
-            category: [
-            // 'Shelving', 
-            'Kitchens'
-            // , 'Cabinetry', 'Woodturning', 'Furniture', 'Carving', 'Outdoor Builds', 'Workshop', 'Framing'
+            categories: [
+            Bespoke, Cabinetry, Carving, Framing, Kitchens, Lamps, Outdoor, Shelving, Woodturning, Workshop
             ],
             photoIndex: 0,
             isOpen: false
         }
     }
 
+
     render() {
-        var images = this.state.photosData
-        var category = this.state.category
+        var categories = this.state.categories
         const { photoIndex, isOpen } = this.state
-
-
-
+        var counter = 0
         return (
             <div className="tc">
 
   <h1>Gallery</h1>
   {
-  category.map((category, i) => {
+  categories.map((category, i) => {
     return (
-      <div className="Fill">
-      <h2 key={i}>{category}</h2>
+      <div>
+      <h2 key={i}>{category.category}</h2>
       <main className="cf w-100">
       {       
-        images.map((image, i) => {
+        category.images.map((image, j) => {
+              counter += 1
+              j = counter
               return( 
-          
-                <ImageThumb onClick={() => this.setState({ isOpen: true, photoIndex: i})} key={i} url={image} isGallery/>
- 
-               
-             
+                <div>         
+                <ImageThumb onClick={() => this.setState({ isOpen: true, photoIndex: j-1})} key={j+12} url={image.default} isGallery/>
+             </div> 
                 )})
 
   }
               
    
       </main>
-         {isOpen && (
+     {isOpen && (
           <Lightbox className="center"
             mainSrc={images[photoIndex]}
             nextSrc={images[(photoIndex + 1) % images.length]}

@@ -15,7 +15,7 @@ export const Navigation = () => {
 		<Link className='dim black dib mr3 pointer mv2 link' to="/gallery">Gallery</Link>
 		<Link className='dim black dib mr3 pointer mv2 link' to="/join">Join Us</Link>
 		<Link className='dim black dib mr3 pointer mv2 link' to="/testimonials">Testimonials</Link>
-		<Link className='dim black dib mr3 pointer mv2 link' to="/landlords">Landladys/lords</Link>
+		<Link className='dim black dib mr3 pointer mv2 link' to="/landlords">Landladies/lords</Link>
 
 		</nav>
 	<div className="mt1 db ">

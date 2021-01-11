@@ -2,24 +2,17 @@ import React from 'react';
 import RevealContainer from '../components/RevealContainer';
 import List from '../components/List';
 import ImageThumb from '../components/Image';
-import door from '../images/door.JPG';
-import table from '../images/table.jpg';
-import shelf from '../images/shelf.JPG';
+import door from '../images/Gallery/OutdoorBuilds/OutdoorBuilds-2.jpg';
+import table from '../images/Gallery/Framing/Furniture-5.jpg';
+import shelf from '../images/Gallery/Shelving/Shelving-1.jpg';
 import Lightbox from 'react-image-lightbox';
 
-
-	// <h1 className="mt1 mt3-l mt3-m">Peoples General Woodhouse</h1>
 
 class Home extends React.Component {
     constructor() {
         super();
         this.state = {
             photosData: [door, table, shelf],
-            category: [
-            // 'Shelving', 
-            'Kitchens'
-            // , 'Cabinetry', 'Woodturning', 'Furniture', 'Carving', 'Outdoor Builds', 'Workshop', 'Framing'
-            ],
             photoIndex: 0,
             isOpen: false
         }
