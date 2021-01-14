@@ -3,7 +3,7 @@ import RevealContainer from '../components/RevealContainer';
 import List from '../components/List';
 import ImageThumb from '../components/Image';
 import door from '../images/Gallery/OutdoorBuilds/OutdoorBuilds-2.jpg';
-import table from '../images/Gallery/Framing/Furniture-5.jpg';
+import table from '../images/Gallery/Furniture/Furniture-5.jpg';
 import shelf from '../images/Gallery/Shelving/Shelving-1.jpg';
 import Lightbox from 'react-image-lightbox';
 
@@ -23,7 +23,7 @@ class Home extends React.Component {
         const { photoIndex, isOpen } = this.state
 
         return (
-            <div className="tc">
+            <div className="tc ph2">
 
 	<p className="ph2-ns ph2 pb3-ns f4-ns f4"><span className="b">The People’s General Woodhouse</span> is a collective of woodworkers and other traders working in Sussex. We believe in:</p>
     <RevealContainer emoji="🌱" 

@@ -1,6 +1,12 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -23,7 +29,7 @@ body {
 #imgthumb {
    padding:1px;
    border:1px solid #021a40;
-   background-color:#ff0;
+   background-color: transparent;
 }
 
 #background { 
@@ -49,7 +55,11 @@ body {
   height: 100%
 }
 .Fill {
-  /*height: 100vh;*/
 
-  height: 50vh;
+  height: 70vh;
+}
+
+.Fill2 {
+
+  height: 140vh;
 }

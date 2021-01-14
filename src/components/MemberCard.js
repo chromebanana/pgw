@@ -5,7 +5,7 @@ import wood from '../images/wood-texture-zoom.jpg';
 
 const MemberCard = ({ name, trades, tool, img }) => {
   return(
- <div className="mw5 center br3 pa3 pa4-ns mv2 ba b--black-10" style={{'backgroundImage':`url(${wood})`}}>
+ <div className="mw5 center br3 pa3 pa4-ns mv2 ba b--black-10 cover" style={{'backgroundImage':`url(${wood})`}}>
  	<div className="tc">
  	<img src={img} className="br-100 h4 w4 dib" title={"Photo of "+name} alt={"photo of "+name}/>
 	<div className=" bg-white-70 br3 ">

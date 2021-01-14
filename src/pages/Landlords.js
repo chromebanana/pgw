@@ -5,7 +5,7 @@ class Landlords extends React.Component {
 
  render() {
  	return (
-       <div className="Fill tc">
+       <div className="Fill tc pa2">
        <h1>Landladies/lords</h1>
 <List  
 	intro="We provide fast turn-around work for rented accommodation, covering the following areas:	" 

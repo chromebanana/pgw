@@ -14,9 +14,9 @@ const Footer = () => {
 	</a>
 	</div>
 	<div className="dib pv1">
+
 	<a className=" flex items-center pr2 mr2-ns link black-90 dim" href="mailto:thepeoplesgeneralwoodhouse@gmail.com" title="email thepeoplesgeneralwoodhouse@gmail.com">
-		<div className="f4 pr1"> <Emoji className="pr6" emoji="✉️" desc="Envelope Emoji"/></div>
-		<span className="pl2" >thepeoplesgeneralwoodhouse@gmail.com</span>
+		<div className="flex flex-wrap justify-center items-center"> <div className="f4 pr1"> <Emoji className="pr6" emoji="✉️" desc="Envelope Emoji"/></div><span className="pl2 pv0">thepeoplesgeneralwoodhouse</span><span className="pv0" >@gmail.com</span></div>	
 	</a>
 	</div>
 	<div className="dib pv1">

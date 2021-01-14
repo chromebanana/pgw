@@ -11,6 +11,7 @@ const Bespoke = { images: importAll(require.context('../images/Gallery/Bespoke',
 const Cabinetry = { images: importAll(require.context('../images/Gallery/Cabinetry', false, /\.(png|jpe?g|svg)$/)), category: 'Cabinetry' };
 const Carving = { images: importAll(require.context('../images/Gallery/Carving', false, /\.(png|jpe?g|svg)$/)), category: 'Carving' };
 const Framing = { images: importAll(require.context('../images/Gallery/Framing', false, /\.(png|jpe?g|svg)$/)), category: 'Framing' };
+const Furniture = { images: importAll(require.context('../images/Gallery/Furniture', false, /\.(png|jpe?g|svg)$/)), category: 'Furniture' };
 const Kitchens = { images: importAll(require.context('../images/Gallery/Kitchens', false, /\.(png|jpe?g|svg)$/)), category: 'Kitchens' };
 const Lamps = { images: importAll(require.context('../images/Gallery/Lamps', false, /\.(png|jpe?g|svg)$/)), category: 'Lamps' };
 const Outdoor = { images: importAll(require.context('../images/Gallery/OutdoorBuilds', false, /\.(png|jpe?g|svg)$/)), category: 'Outdoor Builds' };
@@ -19,7 +20,7 @@ const Woodturning = { images: importAll(require.context('../images/Gallery/Woodt
 const Workshop = { images: importAll(require.context('../images/Gallery/Workshop', false, /\.(png|jpe?g|svg)$/)), category: 'Workshop' };
 
 const categories = [
-            Bespoke, Cabinetry, Carving, Framing, Kitchens, Lamps, Outdoor, Shelving, Woodturning, Workshop
+            Bespoke, Cabinetry, Carving, Framing, Furniture, Kitchens, Lamps, Outdoor, Shelving, Woodturning, Workshop
             ]
 
 var images = []
@@ -46,7 +47,6 @@ class Gallery extends React.Component {
 
 
     render() {
-        var categories = this.state.categories
         const { photoIndex, isOpen } = this.state
         var counter = 0
         return (
@@ -63,10 +63,8 @@ class Gallery extends React.Component {
         category.images.map((image, j) => {
               counter += 1
               j = counter
-              return( 
-                <div>         
+              return(     
                 <ImageThumb onClick={() => this.setState({ isOpen: true, photoIndex: j-1})} key={j+12} url={image.default} isGallery/>
-             </div> 
                 )})
 
   }
