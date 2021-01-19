@@ -6,39 +6,29 @@ import door from '../images/Gallery/OutdoorBuilds/OutdoorBuilds-2.jpg';
 import table from '../images/Gallery/Furniture/Furniture-5.jpg';
 import shelf from '../images/Gallery/Shelving/Shelving-1.jpg';
 import Lightbox from 'react-image-lightbox';
-const space = process.env.REACT_APP_CONTENTFUL_SPACE_ID
-const token = process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN
+import ReactMarkdown from "react-markdown";
 
 class Home extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             photosData: [door, table, shelf],
             photoIndex: 0,
             isOpen: false,
-            homePage: ''
         }
     }
 
-    async componentDidMount() {
 
-        const url = "https://cdn.contentful.com/spaces/"+space+"/environments/master/entries?access_token="+token+"&content_type=homePage";
-        const response = await fetch(url);
-        const data = await response.json();
-        // console.log(data)
-        this.setState({ homePage: data.items[0].fields });
-      }
 
 
 
     render() {
-       var images = this.state.photosData
-        const { photoIndex, isOpen, homePage } = this.state
-
+        var images = this.state.photosData
+        const { photoIndex, isOpen } = this.state
+        const { data } = this.props
         return (
             <div className="tc ph2">
-            <p>{homePage.intro}</p>
-	<p className="ph2-ns ph2 pb3-ns f4-ns f4"><span className="b">The People’s General Woodhouse</span> is a collective of woodworkers and other traders working in Sussex. We believe in:</p>
+    <ReactMarkdown className="ph2-ns ph2 pb2-ns f4-ns f4" source={data.intro}/>
     <RevealContainer emoji="🌱" 
     emojidesc="seedling" 
     title="Eco-friendly building options" 
@@ -74,7 +64,7 @@ class Home extends React.Component {
 
 		
 	<div className="bt b--black-20 pt4 pb2 mt4">
-	<List title="Our Services" list={['Kitchens', 'Bespoke Shelving', 'Cabinetry', 'Furniture including: Tables, Desks, Benches and Beds', 'Outdoor builds including: Sheds, lean-tos and gates', 'Woodturning', 'Picture Framing', 'Furniture Restoration', 'Home Repairs']}/>
+	{data.ourServices && (<List title="Our Services" list={data.ourServices}/>)}
 	
 	</div>	
 	</div>
