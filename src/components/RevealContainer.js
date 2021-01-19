@@ -16,10 +16,10 @@ class RevealContainer extends Component {
 
 render()
 {
-  const { emoji, emojidesc, title, content } = this.props;
+  const { title, content } = this.props;
   return(
  <div id="RevealContainer" className={this.state.open ? "mv4 pv3 ba b--black-10 bw3 br3  bg-animate bg-black-10 hover-bg-white-30 pointer  " : "mv4 pv3 ba b--black-10 bw2 br3 bg-black-10 bg-animate hover-bg-white-30 pointer"} onClick={this.handleClick}>
- <h2 className="ma1 f4 f3-ns"><Emoji desc={emojidesc} emoji={emoji}/> {title}</h2>
+ <h2 className="ma1 f4 f3-ns">{title}</h2>
     <div hidden={!this.state.open} className="ph4-ns ph3 lh-copy">
     <p className="">{content}</p>
     </div>
