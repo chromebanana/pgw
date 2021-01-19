@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Emoji from './Emoji';
-
 
 class RevealContainer extends Component {
   constructor(props) {
