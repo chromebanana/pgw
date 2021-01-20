@@ -7,6 +7,10 @@ import table from '../images/Gallery/Furniture/Furniture-5.jpg';
 import shelf from '../images/Gallery/Shelving/Shelving-1.jpg';
 import Lightbox from 'react-image-lightbox';
 import ReactMarkdown from "react-markdown";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
+
+ 
 
 class Home extends React.Component {
     constructor(props) {
@@ -28,7 +32,9 @@ class Home extends React.Component {
         const { data, ethos } = this.props
         return (
             <div className="tc ph2">
-    <ReactMarkdown className="ph2-ns ph2 pb2-ns f4-ns f4" source={data.intro}/>
+            <div className="ph2-ns ph2 pb2-ns f4-ns f4" >
+        {documentToReactComponents(data.introduction)}
+    </div>
     { ethos && ethos.map((item, i) => {
             return(
                 <RevealContainer key={i} title={item.fields.headline} content={item.fields.body}/>

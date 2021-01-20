@@ -12,9 +12,10 @@ class App extends Component {
   constructor() {
       super();
       this.state = {
-        home: '',
+        pages: '',
         testimonials: '',
-        ethos: ''
+        ethos: '',
+        members: ''
       }
 
   }
@@ -23,28 +24,30 @@ class App extends Component {
         let url = "https://cdn.contentful.com/spaces/"+space+"/environments/master/entries?access_token="+token+"&content_type=homePage";
         let response = await fetch(url);
         const homePage = await response.json();
-        this.setState({ home: homePage.items[0].fields });
+        this.setState({ pages: homePage.items[0].fields });
         url = "https://cdn.contentful.com/spaces/"+space+"/environments/master/entries?access_token="+token+"&content_type=pgwEthos&order=sys.createdAt";
         response = await fetch(url);
         const ethos = await response.json();
         this.setState({ ethos: ethos.items });
         url = "https://cdn.contentful.com/spaces/"+space+"/environments/master/entries?access_token="+token+"&content_type=testimonial";
         response = await fetch(url);
-        const testimonial = await response.json();
-        this.setState({ testimonials: testimonial.items});
-        
+        const testimonials = await response.json();
+        this.setState({ testimonials: testimonials.items});
+        url = "https://cdn.contentful.com/spaces/"+space+"/environments/master/entries?access_token="+token+"&content_type=members&order=sys.createdAt";
+        response = await fetch(url);
+        const members = await response.json();
+        this.setState({ members: members});        
       }
 
   render() {
-    const { home, ethos, testimonials } = this.state
-
+    const { pages, ethos, testimonials, members } = this.state
   return (
     <div className="w-100 pb4-ns"  id="background">
     <div className="App mw8 w-90-ms center ">
         <Router className=""> 
           <Navigation />
           <div className="WhiteFilter ba-ns b--black-20 br3-ns ph4-ns pt4-ns ph3 pv2 mt4-ns" >
-          <BaseRouter home={home} ethos={ethos} testimonials={testimonials}/>
+          <BaseRouter home={pages} ethos={ethos} testimonials={testimonials} joinUs={pages.joinUs} members={members} landlords={pages.landlords}/>
           <Footer/>
           </div>
         </Router>
