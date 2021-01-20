@@ -6,11 +6,7 @@ import door from '../images/Gallery/OutdoorBuilds/OutdoorBuilds-2.jpg';
 import table from '../images/Gallery/Furniture/Furniture-5.jpg';
 import shelf from '../images/Gallery/Shelving/Shelving-1.jpg';
 import Lightbox from 'react-image-lightbox';
-import ReactMarkdown from "react-markdown";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-
-
- 
 
 class Home extends React.Component {
     constructor(props) {
@@ -21,10 +17,6 @@ class Home extends React.Component {
             isOpen: false,
         }
     }
-
-
-
-
 
     render() {
         var images = this.state.photosData

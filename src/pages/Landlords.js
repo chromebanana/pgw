@@ -2,11 +2,6 @@ import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 class Landlords extends React.Component {
-  constructor(props) {
-        super(props);
-    }
-
-
  render() {
  	const { data } = this.props
  	return (
