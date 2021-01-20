@@ -1,5 +1,4 @@
 import React from 'react';
-import List from '../components/List';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 class Landlords extends React.Component {
