@@ -3,43 +3,12 @@ import ImageThumb from '../components/Image';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css'
 
-function importAll(r) {
-  return r.keys().map(r);
-}
-
-const Bespoke = { images: importAll(require.context('../images/Gallery/Bespoke', false, /\.(png|jpe?g|svg)$/)), category: 'Bespoke' };
-const Cabinetry = { images: importAll(require.context('../images/Gallery/Cabinetry', false, /\.(png|jpe?g|svg)$/)), category: 'Cabinetry' };
-const Carving = { images: importAll(require.context('../images/Gallery/Carving', false, /\.(png|jpe?g|svg)$/)), category: 'Carving' };
-const Framing = { images: importAll(require.context('../images/Gallery/Framing', false, /\.(png|jpe?g|svg)$/)), category: 'Framing' };
-const Furniture = { images: importAll(require.context('../images/Gallery/Furniture', false, /\.(png|jpe?g|svg)$/)), category: 'Furniture' };
-const Kitchens = { images: importAll(require.context('../images/Gallery/Kitchens', false, /\.(png|jpe?g|svg)$/)), category: 'Kitchens' };
-const Lamps = { images: importAll(require.context('../images/Gallery/Lamps', false, /\.(png|jpe?g|svg)$/)), category: 'Lamps' };
-const Outdoor = { images: importAll(require.context('../images/Gallery/OutdoorBuilds', false, /\.(png|jpe?g|svg)$/)), category: 'Outdoor Builds' };
-const Shelving = { images: importAll(require.context('../images/Gallery/Shelving', false, /\.(png|jpe?g|svg)$/)), category: 'Shelving' };
-const Woodturning = { images: importAll(require.context('../images/Gallery/Woodturning', false, /\.(png|jpe?g|svg)$/)), category: 'Woodturning' };
-const Workshop = { images: importAll(require.context('../images/Gallery/Workshop', false, /\.(png|jpe?g|svg)$/)), category: 'Workshop' };
-
-const categories = [
-            Bespoke, Cabinetry, Carving, Framing, Furniture, Kitchens, Lamps, Outdoor, Shelving, Woodturning, Workshop
-            ]
-
-var images = []
-// eslint-disable-next-line
- categories.forEach((category) => {
-    category.images.map((image) => {
-// eslint-disable-next-line
-      return images.push(image.default)
-    })
-  })
 
 
 class Gallery extends React.Component {
     constructor() {
         super();
         this.state = {
-            categories: [
-            Bespoke, Cabinetry, Carving, Framing, Kitchens, Lamps, Outdoor, Shelving, Woodturning, Workshop
-            ],
             photoIndex: 0,
             isOpen: false
         }
@@ -48,56 +17,73 @@ class Gallery extends React.Component {
 
     render() {
         const { photoIndex, isOpen } = this.state
+        const { fields, includes } = this.props
+
+        const gallerySorted = fields.gallery && fields.gallery.map((item, i) => {
+          return includes.Entry && includes.Entry.filter(entry => 
+              entry.sys.id === item.sys.id)[0]
+          })
+
+        var numCategories = 0
         var counter = 0
+        const imageUrls = []
         return (
             <div className="tc">
-
-  <h1>Gallery</h1>
-  {
-  categories.map((category, i) => {
-    return (
-      <div>
-      <h2 key={i}>{category.category}</h2>
-      <main className="cf w-100">
-      {       
-        category.images.map((image, j) => {
-              counter += 1
-              j = counter
-              return(     
-                <ImageThumb onClick={() => this.setState({ isOpen: true, photoIndex: j-1})} key={j+12} url={image.default} isGallery/>
-                )})
-
-  }
-              
-   
-      </main>
-     {isOpen && (
-          <Lightbox className="center"
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-            onCloseRequest={() => this.setState({ isOpen: false })}
-            onMovePrevRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + images.length - 1) % images.length,
-              })
+            <h1>Gallery</h1>
+            {
+            gallerySorted && gallerySorted.map((category, i) => {
+              numCategories = gallerySorted.length
+              return (
+                <div className="mb3">
+                <main className="cf w-100"> 
+                <h2 key={i}>{category.fields.categoryName}</h2>
+                {
+                  category.fields.photos && category.fields.photos.map((asset, j) => {
+                    const photoUrl = includes.Asset && includes.Asset.filter(image => 
+                        image.sys.id === asset.sys.id)[0].fields.file.url
+                    imageUrls.push(photoUrl)
+                    j = counter
+                    counter += 1
+                    return(     
+                           <ImageThumb 
+                            onClick={() => this.setState({ isOpen: true, photoIndex: j})} 
+                            key={j+numCategories} 
+                            url={photoUrl} 
+                            isGallery/>
+                         )
+                  })
+                }
+            </main>
+                </div>
+                )
+            })
             }
-            onMoveNextRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + 1) % images.length,
-              })
+                        
+             
+               {isOpen && (
+                    <Lightbox className="center"
+                      mainSrc={imageUrls[photoIndex]}
+                      nextSrc={imageUrls[(photoIndex + 1) % imageUrls.length]}
+                      prevSrc={imageUrls[(photoIndex + imageUrls.length - 1) % imageUrls.length]}
+                      onCloseRequest={() => this.setState({ isOpen: false })}
+                      onMovePrevRequest={() =>
+                        this.setState({
+                          photoIndex: (photoIndex + imageUrls.length - 1) % imageUrls.length,
+                        })
+                      }
+                      onMoveNextRequest={() =>
+                        this.setState({
+                          photoIndex: (photoIndex + 1) % imageUrls.length,
+                        })
+                      }
+                    />
+                  )}
+            </div>
+                )
             }
-          />
-        )}
-      </div>
-      )
-  })
-}
+          }
 
-</div>
 
-        );
-    }
-}
+          
 
-export default Gallery;
+          export default Gallery;
