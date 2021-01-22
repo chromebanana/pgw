@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import Join from './pages/Join';
