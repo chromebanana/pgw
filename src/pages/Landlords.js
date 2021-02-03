@@ -5,7 +5,7 @@ class Landlords extends React.Component {
  render() {
  	const { data } = this.props
  	return (
-       <div className="Fill tc pa2">
+       <div className="tc pa2">
        {
        	documentToReactComponents(data)
        }
